@@ -1,9 +1,8 @@
 .project-bg {
   margin-bottom: 14px;
+  justify-content: center;
   @include w180 {
     height: 180px;
-    display: flex;
-    justify-content: center !important;
   }
   & h2 {
     color: $accent;

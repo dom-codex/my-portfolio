@@ -2,6 +2,7 @@
   background-color: $primary;
   position: fixed;
   height: 100%;
+  padding-bottom: 20px;
   @include w180 {
     position: relative;
     display: block;
