@@ -1,0 +1,148 @@
+header,
+.navigator {
+  width: 100%;
+}
+
+.nav-btn {
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 12px;
+  height: 48px;
+  @include media-md {
+    height: auto;
+    padding-top: 0;
+  }
+  @include w220 {
+    padding-right: 0px;
+    padding-left: 8px;
+    text-align: left;
+    height: 50px;
+  }
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+    height: 3px;
+    width: 28px;
+    margin-right: 12px;
+    background-color: #fff;
+    @include media-md {
+      display: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 0;
+      z-index: 3;
+      height: 3px;
+      width: 28px;
+      background-color: #fff;
+      @include transition-ease;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      z-index: 3;
+      height: 3px;
+      width: 20px;
+      background-color: #fff;
+      @include transition-ease;
+    }
+  }
+}
+.nav {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: $primary;
+  @include fullScreen;
+  @include transition-ease;
+  @include flex(column);
+  @include media-md {
+    position: static !important;
+    display: block;
+    transform: translateY(0%);
+    background-color: rgba($primary, 1);
+    padding: 12px 0 5px 0;
+    height: auto;
+  }
+
+  transform: translateY(-100%);
+  & ul {
+    list-style: none;
+    @include media-md {
+      @include flex(row, center);
+    }
+    & li {
+      margin-bottom: 18px;
+      text-align: center;
+      @include transition-ease;
+      transform: translateX(500%);
+      @include media-md {
+        transform: translateX(0%);
+        text-align: right;
+        margin-right: 15px;
+      }
+      & a {
+        display: inline-block;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        color: $secondary;
+        @include media-md {
+          color: $accent;
+          font-size: 1.1em;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &:hover {
+        @include media-md {
+          transform: scale(1);
+          font-weight: normal;
+        }
+        transform: scale(1.5);
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.nav.index {
+  @include media-md {
+    background-color: rgba($primary, 0.15);
+  }
+}
+.open {
+  & span {
+    background-color: transparent;
+  }
+  & span::after {
+    transform: rotate(-45deg);
+    top: 5px;
+  }
+  & span::before {
+    width: 28px;
+    transform: rotate(45deg);
+    top: 5px;
+  }
+}
+.show {
+  transform: translateY(0%);
+}
+.show ul li {
+  transform: translateX(0%);
+}
+@for $i from 1 through 5 {
+  .nav ul li:nth-child(#{$i}) {
+    transition-delay: ($i * 0.1s) + 0.2s;
+  }
+}
+.nav li:hover {
+  transition-delay: 0s !important;
+  transition-duration: 0.2s !important;
+}

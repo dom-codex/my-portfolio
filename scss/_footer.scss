@@ -1,0 +1,58 @@
+.social-icons-cont {
+  @include w220 {
+    width: 100%;
+    left: 0;
+    justify-content: space-around;
+    bottom: 25px;
+    & img {
+      margin-right: 12px;
+    }
+    & .first {
+      margin-left: 8px;
+    }
+  }
+  @include w365 {
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 6px;
+  }
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  bottom: 7px;
+  left: 15px;
+  z-index: 0;
+  &.index {
+    img {
+      width: 23px;
+    }
+    .first {
+      width: 14px;
+    }
+  }
+  & img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.copyright {
+  @include w220 {
+    bottom: 8px;
+    right: 8px;
+    text-align: center;
+    width: 100%;
+  }
+  @include w365 {
+    display: none;
+  }
+  position: fixed;
+  bottom: 12px;
+  right: 22px;
+  z-index: 0;
+  color: #fafafa;
+  font-size: 1.15em;
+}

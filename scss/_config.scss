@@ -1,0 +1,31 @@
+$primary: #272727;
+$secondary: orange;
+$accent: #fff;
+@mixin fullScreen {
+  width: 100%;
+  height: 100%;
+}
+@mixin flex($direction: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+@mixin transition-ease {
+  transition: all 0.5s linear;
+}
+@mixin bg($xval, $url: "../assets/home.jpg") {
+  background: linear-gradient(
+      to right,
+      rgba($primary, 0.9),
+      rgba($primary, 0.3)
+    ),
+    url($url) $xval;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

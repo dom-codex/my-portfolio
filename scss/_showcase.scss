@@ -1,0 +1,38 @@
+.showcase {
+  margin-top: 30vh;
+  width: 100%;
+  text-align: center;
+  @include w295 {
+    margin-top: 18vh;
+  }
+}
+.showcase-cont {
+  letter-spacing: 1px;
+  & p {
+    font-size: 1.5em;
+    color: $accent;
+    margin-bottom: 8px;
+  }
+  & h1 {
+    display: inline-block;
+    font-size: 2.2em;
+    color: $accent;
+  }
+  & .surname {
+    font-size: 2.5em;
+    color: $secondary;
+    font-weight: bold;
+    margin-left: 8px;
+    @include transition-ease;
+  }
+  & .ruler {
+    height: 1px;
+    background-color: #fafafa;
+    margin: 4px 0;
+  }
+  @mixin media-md {
+    .surname {
+      font-size: 6em;
+    }
+  }
+}

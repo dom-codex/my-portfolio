@@ -1,0 +1,48 @@
+@import "./config";
+@import "./mediaQueries";
+@import "./header";
+@import "./showcase";
+@import "./footer";
+@import "./details";
+@import "./contact";
+@import "./project";
+
+body {
+  width: 100vw;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 180px;
+}
+a {
+  text-decoration: none;
+  color: $accent;
+}
+main {
+  @include fullScreen;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  @include w180 {
+    overflow: hidden;
+  }
+}
+.home {
+  position: fixed;
+  @include bg335 {
+    @include bg(right, "../assets/300.jpg");
+  }
+  @include bg250 {
+    position: relative;
+    @include bg(-420px, "../assets/300.jpg");
+  }
+  @include bg(center);
+  @include media-md {
+    & {
+      background-repeat: no-repeat;
+      background-position: 55% 18%;
+    }
+  }
+}
+.link-active {
+  color: $secondary !important;
+}

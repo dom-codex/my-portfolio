@@ -1,0 +1,49 @@
+.contact-main {
+  position: fixed;
+  height: 100%;
+  min-width: 100vw;
+  @include bg335 {
+    @include bg(right, "../assets/300.jpg");
+  }
+  @include w295 {
+    position: relative;
+  }
+  @include bg250 {
+    @include bg(-420px, "../assets/300.jpg");
+  }
+  @include bg(center);
+  @include media-md {
+    & {
+      background-repeat: no-repeat;
+      background-position: 55% 18%;
+    }
+  }
+}
+.contact-section {
+  @include fullScreen;
+  @include flex;
+  @include w295 {
+    display: block;
+    margin-top: 20vh;
+    text-align: center;
+    padding: 0 8px 0 8px;
+  }
+  & h1 {
+    font-size: 2.2em;
+    color: $accent;
+    margin-bottom: 12px;
+  }
+  & .contact-info {
+    color: $accent;
+    @include flex(row, flex-start);
+  }
+  & .contact-details {
+    margin-bottom: 18px;
+  }
+  & .contact-details a {
+    letter-spacing: 1px;
+    font-size: 1.3em;
+    color: $secondary;
+    word-break: break-all;
+  }
+}
